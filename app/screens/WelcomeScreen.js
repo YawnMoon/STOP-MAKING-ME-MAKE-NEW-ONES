@@ -15,6 +15,7 @@ import {
   View,
 } from "react-native";
 
+import LoginBg from "../assets/images/istockphoto-1049468482-612x612.jpg";
 import SVGimg from "../assets/images/assalogo.svg";
 import colors from "../config/colors";
 import RegisterScreen from "./RegisterScreen";
@@ -45,14 +46,20 @@ const WelcomeScreen = ({ navigation }) => {
       style={{ flex: 1, justifyContent: "center" }}
       onLayout={onLayoutRootView}
     >
-      <View style={{ paddingHorizontal: 25 }}>
+      <Image source = {require("../assets/images/istockphoto-1049468482-612x612.jpg")} style = {{ 
+            height: 300,
+            width: 500,
+            top: -160}}/>
+
+      <View style={{ paddingHorizontal: 35 }}>
         <Text
           style={{
             fontFamily: "Roboto-Medium",
             fontSize: 28,
             fontWeight: "500",
             color: "#333",
-            marginBottom: 30,
+            marginBottom: -100,
+            top: -130,
           }}
         >
           Login
@@ -90,27 +97,6 @@ const WelcomeScreen = ({ navigation }) => {
           label={"Login"}
           onPress={() => navigation.navigate("ASSA")}
         />
-
-        {/* <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginBottom: 30,
-          }}
-        >
-          <Text>New to the app?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-            <Text
-              style={{
-                color: colors.primary,
-                fontWeight: "700",
-                marginLeft: 5,
-              }}
-            >
-              Register
-            </Text>
-          </TouchableOpacity>
-        </View> */}
       </View>
 
       <SVGimg style={styles.logo} width={100} height={100} alignSelf="center" />
